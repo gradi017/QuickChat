@@ -63,4 +63,18 @@ class Login {
         
         return "Username successfully captured\nPassword successfully captured\nCellphone successfully captured\nWelcome " + firstname + " " + lastname + " it is great to see you.";
     }
+    
+     // ========== LOGIN USER ==========
+    static boolean loginUser(String username, String password) {
+        return username.equals(regUsername) && password.equals(regPassword);
+    }
+    
+    // ========== RETURN LOGIN STATUS ==========
+    static String returnLoginStatus(boolean logged) {
+        if(logged) {
+            return "Welcome back " + regFirstname + " " + regLastname + " it is great to see you again";
+        } else {
+            return "A failed login";
+        }
+    }
 }
