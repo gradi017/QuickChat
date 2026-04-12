@@ -32,5 +32,16 @@ public class QuickChat {
         if(result.contains("is not correctly")) {
             return;
         }
+        
+          System.out.print("Enter your username: ");
+        String loginUser = scan.next();
+        
+        System.out.print("Enter your password: ");
+        String loginPass = scan.next();
+        
+        boolean loginResult = Login.loginUser(loginUser, loginPass);
+        
+        System.out.println(Login.returnLoginStatus(loginResult));
+    
     }
 }
