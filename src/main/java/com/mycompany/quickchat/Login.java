@@ -4,15 +4,15 @@
  */
 package com.mycompany.quickchat;
 
-
 class Login {
     static String regUsername = "";
     static String regPassword = "";
     static String regCellphone = "";
     static String regFirstname = "";
     static String regLastname = "";
+    static boolean isLoggedIn = false;
     
-     // ========== CHECK USERNAME METHODS ==========
+    // ========== CHECK USERNAME METHODS ==========
     static boolean checkUserName(String username) {
         return username.contains("_") && username.length() <= 5;
     }
@@ -64,9 +64,11 @@ class Login {
         return "Username successfully captured\nPassword successfully captured\nCellphone successfully captured\nWelcome " + firstname + " " + lastname + " it is great to see you.";
     }
     
-     // ========== LOGIN USER ==========
+    // ========== LOGIN USER ==========
     static boolean loginUser(String username, String password) {
-        return username.equals(regUsername) && password.equals(regPassword);
+        boolean success = username.equals(regUsername) && password.equals(regPassword);
+        isLoggedIn = success;
+        return success;
     }
     
     // ========== RETURN LOGIN STATUS ==========
